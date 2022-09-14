@@ -21,7 +21,7 @@ def SaveUser():
         _bool='True'
     else:
         _bool='False'
-    my_game.insert(parent='', index='end', iid=user_counter, text='', tags=('ttk'),
+    data_table.insert(parent='', index='end', iid=user_counter, text='', tags=('ttk'),
                    values=(user_counter+1, name_text_field.get('1.0','end'), email_text_field.get('1.0','end'), _bool))
     user_counter+=1
 
@@ -30,16 +30,16 @@ def HideDisabledUser():
 
     for count in range(0,user_counter):
         global hiding
-        item=my_game.item(count)
+        item=data_table.item(count)
         
         record = item['values']
-        my_game.selection_set()
+        data_table.selection_set()
 
         if(record[3]=='False'):
             if hiding:
-                my_game.detach(count)
+                data_table.detach(count)
             else:
-                my_game.move(count , parent='', index=count)
+                data_table.move(count , parent='', index=count)
 
     if hiding:
         hiding=False
@@ -116,30 +116,30 @@ check_enabled_button = Checkbutton(frame_right, variable=var_check_enabled_butto
 check_enabled_button.grid(row=7, column=2, pady=15, padx=1)
 
 #widgets have been placed in the left frame.
-#used ttk to create table
-my_game = ttk.Treeview(frame_left, show='headings')
-my_game['columns'] = ('user_id', 'user_name', 'user_email', 'user_enabled')
+##used ttk to create table
+data_table = ttk.Treeview(frame_left, show='headings')
+data_table['columns'] = ('user_id', 'user_name', 'user_email', 'user_enabled')
 
-my_game.column("user_id", anchor=N, width=60)
-my_game.column("user_name", anchor=N, width=90)
-my_game.column("user_email", anchor=N, width=140)
-my_game.column("user_enabled", anchor=N, width=80)
+data_table.column("user_id", anchor=N, width=60)
+data_table.column("user_name", anchor=N, width=90)
+data_table.column("user_email", anchor=N, width=140)
+data_table.column("user_enabled", anchor=N, width=80)
 
-my_game.heading("user_id", text="Id", anchor=tkinter.W)
-my_game.heading("user_name", text="User Name", anchor=tkinter.W)
-my_game.heading("user_email", text="Email", anchor=tkinter.W)
-my_game.heading("user_enabled", text="Enabled", anchor=tkinter.W)
+data_table.heading("user_id", text="Id", anchor=tkinter.W)
+data_table.heading("user_name", text="User Name", anchor=tkinter.W)
+data_table.heading("user_email", text="Email", anchor=tkinter.W)
+data_table.heading("user_enabled", text="Enabled", anchor=tkinter.W)
 
-my_game.insert(parent='', index='end', iid=0, text='', tags=('ttk'),
+data_table.insert(parent='', index='end', iid=0, text='', tags=('ttk'),
                values=('1', 'AdminUser', 'admin@piworks.net', 'False'))
-my_game.insert(parent='', index='end', iid=1, text='', tags=('ttk'),
+data_table.insert(parent='', index='end', iid=1, text='', tags=('ttk'),
                values=('2', 'TestUser', 'testuser@piworks.net', 'True'))
 
-style = ttk.Style(my_game)
+style = ttk.Style(data_table)
 style.theme_use("default")
 style.configure("Treeview.Heading", background="#007cba", foreground="white")
 
-my_game.pack()
+data_table.pack()
 
 #For the interface to work continuousl
 master.mainloop()
