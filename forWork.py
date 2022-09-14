@@ -150,6 +150,7 @@ check_enabled_button.grid(row=7, column=2, pady=15, padx=1)
 
 #widgets have been placed in the left frame.
 ##used ttk to create table
+
 ### https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/ttk-Treeview.html
 data_table = ttk.Treeview(frame_left, show='headings')
 data_table['columns'] = ('user_id', 'user_name', 'user_email', 'user_enabled')
