@@ -95,6 +95,8 @@ newUser_label = Label(frame_right, bg='#f5f5f5', text='New User', font='Verdana 
                       anchor=tkinter.W)
 newUser_label.grid(row=1, column=1, columnspan=18, padx=10, pady=10)
 
+##information for the text field: https://www.tutorialspoint.com/python/tk_text.htm?key=treeview+ttk 
+
 ###username part
 name_Label = Label(frame_right, bg='#ffffff', text='Username :', font='Verdana 7').grid(row=2, column=1, pady=15, padx=10)
 ###username text field part
@@ -135,11 +137,12 @@ user_role_option.set("Select User")
 user_role_dropdown_menu = OptionMenu(frame_right, user_role_option, 'Guest', 'Admin', 'SuperAdmin')
 user_role_dropdown_menu.configure(width=28, bg='#ffffff')
 user_role_dropdown_menu.grid(row=6, column=2, pady=15, padx=10)
-### more info : https://pythonguides.com/python-tkinter-optionmenu/
+### more information for optionmenu : https://pythonguides.com/python-tkinter-optionmenu/
 
 ###enabled label
 Label(frame_right, bg='#ffffff', text='Enabled :', font='Verdana 7').grid(row=7, column=1, pady=15, padx=10)
 
+##more information for the checkbutton: https://www.tutorialspoint.com/python/tk_checkbutton.htm
 ###Our variable keeps the value 1 when the enabled button is checked. keeps 0 when unchecked.
 var_check_enabled_button = IntVar()
 check_enabled_button = Checkbutton(frame_right, variable=var_check_enabled_button, onvalue=1, offvalue=0, bg='#ffffff', font='Verdana 10 ')
