@@ -1,8 +1,11 @@
 import tkinter
 from tkinter import *
 from tkinter import ttk
-#The code was written using python and the tkinter library. If you don't have the tkinter library, please type in cmd: 'pip install tkinter'
-#If you get an error while running, close and reopen the ide to run the code again.
+
+'''
+The code was written using python and the tkinter library. If you don't have the tkinter library, please type in cmd: 'pip install tkinter'
+If you get an error while running, close and reopen the ide to run the code again.
+'''
 
 user_counter=2
 hiding=True
@@ -86,9 +89,12 @@ check_hide_button.pack(padx=10, pady=10, side=LEFT)
 
 #widgets have been placed in the right frame.
 
-##Grid positioning was used for placements.
-##row controls the horizontal ordering, and the column controls the vertical order within the horizontal order. 
-##Thus, texts and textField widgets to receive values ​​were placed in front of them.
+'''
+Grid positioning was used for placements.
+row controls the horizontal ordering, and the column controls the vertical order within the horizontal order. 
+Thus, texts and textField widgets to receive values ​​were placed in front of them.
+
+'''
 
 ###New user text and this background 
 newUser_label = Label(frame_right, bg='#f5f5f5', text='New User', font='Verdana 10', width=40, height=2,
@@ -143,6 +149,7 @@ user_role_dropdown_menu.grid(row=6, column=2, pady=15, padx=10)
 Label(frame_right, bg='#ffffff', text='Enabled :', font='Verdana 7').grid(row=7, column=1, pady=15, padx=10)
 
 ##more information for the checkbutton: https://www.tutorialspoint.com/python/tk_checkbutton.htm
+
 ###Our variable keeps the value 1 when the enabled button is checked. keeps 0 when unchecked.
 var_check_enabled_button = IntVar()
 check_enabled_button = Checkbutton(frame_right, variable=var_check_enabled_button, onvalue=1, offvalue=0, bg='#ffffff', font='Verdana 10 ')
@@ -168,6 +175,7 @@ data_table.heading("user_email", text="Email", anchor=tkinter.W)
 data_table.heading("user_enabled", text="Enabled", anchor=tkinter.W)
 
 ##I pre-added it as an example of adding elements to the table
+
 ###The function of adding user automatically with the save user button is written above.
 data_table.insert(parent='', index='end', iid=0, text='', tags=('ttk'),
                values=('1', 'AdminUser', 'admin@piworks.net', 'False'))
